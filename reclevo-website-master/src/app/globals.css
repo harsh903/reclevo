@@ -1,0 +1,429 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+
+  /* Reclevo Brand Colors */
+  --primary-green: #0C5E41;
+  --primary-green-light: #0F7A52;
+  --primary-green-dark: #094A33;
+  --primary-green-50: #E8F5F0;
+  --primary-green-100: #C7E6D7;
+  --primary-green-200: #9FD6BE;
+  --primary-green-500: #0C5E41;
+  --primary-green-600: #0A4F36;
+  --primary-green-700: #08402B;
+
+  /* Brand Grays */
+  --text-primary: #000000;
+  --text-secondary: #636363;
+  --text-light: #888888;
+  --white: #ffffff;
+
+  /* Functional colors */
+  --success: #0C5E41;
+  --error: #dc2626;
+  --warning: #f59e0b;
+  --info: #0284c7;
+
+  /* Background variations */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-accent: #0C5E41;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+/* Reclevo Brand Button Styles */
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--white);
+  @apply px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-light);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  @apply px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.btn-outline {
+  border: 1px solid var(--text-secondary);
+  color: var(--text-secondary);
+  @apply px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.btn-ghost {
+  color: var(--primary-green);
+  @apply px-4 py-2 rounded-md text-sm font-medium transition-all duration-200;
+}
+
+.btn-ghost:hover {
+  background-color: var(--primary-green-50);
+}
+
+/* CTA Button Styles */
+.cta-primary-btn {
+  background-color: white;
+  color: var(--primary-green);
+  @apply px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg;
+}
+
+.cta-primary-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.cta-secondary-btn {
+  border: 2px solid white;
+  color: white;
+  @apply px-8 py-4 rounded-lg text-lg font-semibold transition-colors;
+}
+
+.cta-secondary-btn:hover {
+  background-color: white;
+  color: var(--primary-green);
+}
+
+/* Navigation Styles */
+.nav-dropdown-btn {
+  color: var(--text-secondary);
+}
+
+.nav-dropdown-btn:hover {
+  color: var(--primary-green);
+}
+
+.nav-dropdown-item {
+  color: var(--text-secondary);
+}
+
+.nav-dropdown-item:hover {
+  background-color: var(--primary-green-50);
+  color: var(--primary-green);
+}
+
+/* Modern card styles */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+}
+
+.solution-card {
+  @apply bg-white rounded-xl shadow-lg p-8 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.solution-card:hover {
+  border-color: var(--primary-green-200);
+}
+
+.feature-card {
+  @apply bg-white rounded-lg p-6 shadow-md border border-gray-100 transition-all duration-200 hover:shadow-lg;
+}
+
+.feature-card:hover {
+  border-color: var(--primary-green-200);
+}
+
+.stats-card {
+  background: linear-gradient(135deg, var(--primary-green-50) 0%, var(--primary-green-100) 100%);
+  @apply text-center p-6 rounded-xl;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-green-50) 0%, #f0f9ff 50%, var(--primary-green-50) 100%);
+  @apply relative overflow-hidden;
+}
+
+.section-padding {
+  @apply py-16 lg:py-24;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Gradient backgrounds */
+.gradient-emerald {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-brand {
+  color: var(--primary-green);
+}
+
+/* Link styles */
+a {
+  color: #059669;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+a:hover {
+  color: #047857;
+}
+
+/* Form improvements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    @apply px-6 py-3 text-base;
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out forwards;
+}
