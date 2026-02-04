@@ -2,7 +2,7 @@
 import { ptSerif } from "@/utils/Fonts";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
 
 const HeroSection = () => {
   return (
