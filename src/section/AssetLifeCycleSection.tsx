@@ -97,7 +97,7 @@ const AssetLifeCycleSection = () => {
             </motion.blockquote>
           </motion.div>
 
-          {/* Grid directly below the quote card — no top margin */}
+          {/* Grid directly below the quote card - no top margin */}
           <div className="grid grid-cols-2 gap-4 mt-0">
             {features.map((feature, idx) => {
               const Icon = feature.icon;

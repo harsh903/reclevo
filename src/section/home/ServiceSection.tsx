@@ -8,107 +8,95 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import { ptSerif } from "@/utils/Fonts";
 
 const services = [
   {
     id: 1,
     title: "Electronics Recycling",
-    description: "Electronics recycling is reprocessing old electronics",
-    icon: <Smartphone className="w-8 h-8 text-green-700" />,
+    description: "Professional processing and recycling of electronic devices and components.",
+    icon: <Smartphone className="w-6 h-6" />,
   },
   {
     id: 2,
     title: "Glass Recycling",
-    description: "Glass recycling is reusing waste glass into new products",
-    icon: <GlassWater className="w-8 h-8 text-green-700" />,
+    description: "Converting waste glass into reusable materials for manufacturing.",
+    icon: <GlassWater className="w-6 h-6" />,
   },
   {
     id: 3,
     title: "E-Waste Recycling",
-    description:
-      "E-waste recycling is recovering materials from discarded electronic",
-    icon: <Monitor className="w-8 h-8 text-green-700" />,
+    description: "Safe recovery of valuable materials from discarded electronics.",
+    icon: <Monitor className="w-6 h-6" />,
   },
   {
     id: 4,
     title: "Food Waste Recycling",
-    description: "Food recycling converts food waste into useful resources",
-    icon: <Utensils className="w-8 h-8 text-green-700" />,
+    description: "Converting organic waste into compost and renewable energy.",
+    icon: <Utensils className="w-6 h-6" />,
   },
 ];
 
-// Card animation
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 const ServicesSection = () => {
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="py-16 lg:py-24 bg-[#f9fafb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
-          <div>
-            <p className="text-sm text-yellow-600 font-semibold mb-2">
-              WHAT WE DO
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-green-900 leading-tight">
-              Recycling <span className="text-yellow-500">Service</span> for
-              Governments, Businesses & Communities
-            </h2>
-          </div>
-          <div className="flex flex-col items-start lg:items-end">
-            <p className="text-gray-600 max-w-md mb-4 text-sm sm:text-md lg:text-xl">
-              Comprehensive technology-driven solutions for every aspect of
-              waste management, from smart collection to sustainable processing
-            </p>
-            <Link
-              href="/services"
-              className="text-green-700 font-semibold flex items-center gap-2 hover:text-yellow-500 transition-colors"
-            >
-              View All Services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-4">
+            Our Services
+          </span>
+          <h2 className={`text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 ${ptSerif.className}`}>
+            Recycling Services for All Sectors
+          </h2>
+          <p className="text-lg text-[#4a4a4a] max-w-2xl mx-auto">
+            Comprehensive solutions for governments, businesses, and communities
+            to manage waste responsibly.
+          </p>
         </div>
 
-        {/* Background Image */}
-        <div className="relative h-84 sm:h-90 md:h-full w-full mb-16 rounded-3xl overflow-hidden">
-          <Image
-            src="/images/women2.png"
-            alt="Recycling Background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Services Grid overlapping the image */}
-        <motion.div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 -mt-40 lg:-mt-54 p-6 sm:p-8 pb-8">
-          {services.map((service) => (
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="border rounded-2xl p-4 sm:p-6 md:p-8 text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all bg-white relative z-10"
+              className="bg-white rounded-xl p-6 border border-[#e5e7eb] hover:border-[#0C5E41] hover:shadow-lg transition-all"
               variants={cardVariants}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
-              <div className="flex justify-center mb-3 sm:mb-4">
+              <div className="w-12 h-12 bg-[#0C5E41] rounded-lg flex items-center justify-center text-white mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-green-900 mb-2">
+              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2">
                 {service.title}
               </h3>
-              <p className="text-xs sm:text-xs md:text-xs lg:text-xs text-gray-500 mb-3 sm:mb-4">
+              <p className="text-sm text-[#4a4a4a] leading-relaxed">
                 {service.description}
               </p>
-              
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 text-center">
+          <Link href="/smart-waste-solutions">
+            <button className="inline-flex items-center gap-2 text-[#0C5E41] font-semibold hover:underline">
+              View All Solutions <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
   );

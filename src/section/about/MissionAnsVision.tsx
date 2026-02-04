@@ -33,8 +33,8 @@ const MissionAnsVision = () => {
             <p
               className={`text-2xl mt-10 md:text-4xl   !text-gray-100 !float-right pt-4  ${oswald.className}`}
             >
-              End-to-end waste management solutions—from collection <br />
-              to processing—designed for municipalities and businesses.
+              End-to-end waste management solutions, from collection <br />
+              to processing, designed for municipalities and businesses.
             </p>
           </div>
         </div>

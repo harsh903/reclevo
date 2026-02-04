@@ -1,48 +1,48 @@
 import React from "react";
-import { Smartphone, BarChart3, Brain, ArrowRight } from "lucide-react";
+import { Search, Settings, Headphones, TrendingUp, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { ptSerif } from "@/utils/Fonts";
 
 const ProcessSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Digital Asset Tracking",
-      subtitle: "Unified Infrastructure",
+      title: "Understand",
+      subtitle: "Step 1",
       description:
-        "Single platform for asset tracking, workforce management, and real-time operational visibility across all locations.",
-      icon: <Smartphone className="w-6 h-6" />,
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "We start by understanding your specific waste management challenges and requirements through detailed consultation.",
+      icon: <Search className="w-6 h-6" />,
     },
     {
       id: 2,
-      title: "Smart Operations",
-      subtitle: "Automated Workflows",
+      title: "Deploy",
+      subtitle: "Step 2",
       description:
-        "Intelligent scheduling, route optimization, and real-time dashboards to maximize efficiency and reduce costs.",
-      icon: <BarChart3 className="w-6 h-6" />,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        "Our digital platform is customized and deployed to meet your needs, with comprehensive onboarding for all stakeholders.",
+      icon: <Settings className="w-6 h-6" />,
     },
     {
       id: 3,
-      title: "AI Analytics",
-      subtitle: "Predictive Insights",
+      title: "Support",
+      subtitle: "Step 3",
       description:
-        "Data-driven decision making with predictive maintenance alerts and compliance monitoring dashboards.",
-      icon: <Brain className="w-6 h-6" />,
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+        "We provide ongoing technical assistance and training to ensure successful adoption across your organization.",
+      icon: <Headphones className="w-6 h-6" />,
+    },
+    {
+      id: 4,
+      title: "Optimize",
+      subtitle: "Step 4",
+      description:
+        "Continuous optimization based on data and feedback to improve efficiency and maximize your return on investment.",
+      icon: <TrendingUp className="w-6 h-6" />,
     },
   ];
 
   return (
-    <section className="relative bg-[#0C5E41] py-20 lg:py-28 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[size:30px_30px]" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 lg:py-24 bg-[#0C5E41] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,67 +51,49 @@ const ProcessSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-full mb-4 border border-white/20">
-            Our Solution
+          <span className="inline-block px-4 py-2 bg-white/10 text-white text-sm font-medium rounded-full mb-4">
+            How We Work With You
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Complete Asset Management for{" "}
-            <span className="block sm:inline">Panchayats & Municipalities</span>
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 ${ptSerif.className}`}>
+            Our Partnership Approach
           </h2>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            End-to-end waste management platform designed for government bodies,
-            businesses, and communities across India.
+            We don&apos;t just provide software. We work closely with you to ensure
+            successful implementation and continuous improvement.
           </p>
         </motion.div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
             >
-              <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full">
-                {/* Image */}
-                <div className="relative h-44 overflow-hidden">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-
-                  {/* Step number */}
-                  <div className="absolute top-4 left-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#0C5E41] shadow-lg">
-                      {step.icon}
-                    </div>
-                    <span className="text-4xl font-bold text-white">
-                      {String(step.id).padStart(2, "0")}
-                    </span>
+              <div className="bg-white rounded-xl p-8 h-full hover:shadow-lg transition-shadow">
+                {/* Step Number & Icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#0C5E41] rounded-lg flex items-center justify-center text-white">
+                    {step.icon}
                   </div>
+                  <span className={`text-4xl font-bold text-[#e5e7eb] ${ptSerif.className}`}>
+                    {String(step.id).padStart(2, "0")}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <p className="text-[#0C5E41] font-semibold mb-1 text-sm uppercase tracking-wide">
-                    {step.subtitle}
-                  </p>
-                  <h3 className="text-xl font-bold text-black mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-[#636363] leading-relaxed text-sm">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Bottom accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#0C5E41]" />
+                <p className="text-[#0C5E41] font-medium text-sm uppercase tracking-wide mb-2">
+                  {step.subtitle}
+                </p>
+                <h3 className={`text-xl font-bold text-[#1a1a1a] mb-3 ${ptSerif.className}`}>
+                  {step.title}
+                </h3>
+                <p className="text-[#4a4a4a] leading-relaxed text-sm">
+                  {step.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -119,19 +101,21 @@ const ProcessSection = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-14 text-center"
+          className="mt-12 text-center"
         >
-          <Link href="/services">
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#0C5E41] font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <Link href="/smart-waste-solutions">
+            <button className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#0C5E41] font-semibold rounded-full hover:bg-gray-100 transition-colors">
               Explore All Solutions <ArrowRight size={18} />
             </button>
           </Link>
         </motion.div>
       </div>
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-white" style={{ borderRadius: '50% 50% 0 0' }} />
     </section>
   );
 };

@@ -44,8 +44,8 @@ const IntegratedApproch = () => {
               technology, and collaborative partnerships.
             </p>
             <p className="text-gray-600 text-sm">
-              We tackle the entire waste cycle—from collection and segregation
-              to processing and disposal—supported by smart asset management
+              We tackle the entire waste cycle, from collection and segregation
+              to processing and disposal, supported by smart asset management
               solutions.
             </p>
           </motion.div>
@@ -92,7 +92,7 @@ const IntegratedApproch = () => {
               technology drives a circular economy.
             </p>
             <p className="text-gray-600 text-sm">
-              Starting from Goa—a hub of innovation and sustainability—we are
+              Starting from Goa, a hub of innovation and sustainability, we are
               expanding nationwide to create lasting impact.
             </p>
           </motion.div>

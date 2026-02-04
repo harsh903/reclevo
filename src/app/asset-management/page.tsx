@@ -1,6 +1,5 @@
 "use client";
 import HeroSection from "@/section/AssetManagement/HeroSection";
-import AssetCtaSection from "@/section/AssetManagement/AssetCtaSection";
 import { Truck, Users, MapPin, ShieldCheck, ArrowRight } from "lucide-react";
 import { ptSerif } from "@/utils/Fonts";
 import { motion } from "framer-motion";
@@ -85,7 +84,7 @@ export default function AssetManagement() {
             </h2>
             <p className="mt-4 !text-[#636363] dark:text-neutral-300 text-medium font-semibold sm:text-lg md:text-xl leading-relaxed">
               Municipalities struggle with outdated systems that lack real-time
-              visibility—leading to missed collections, equipment failures, and
+              visibility, leading to missed collections, equipment failures, and
               compliance issues.
             </p>
             <ul className="mt-6 space-y-2 text-sm sm:text-base font-medium !text-[#636363] dark:text-neutral-300">
@@ -142,33 +141,37 @@ export default function AssetManagement() {
           </motion.div>
         </motion.section>
 
-        {/* CTA Section */}
-        <motion.section
-          className="flex flex-col items-center justify-center min-h-[80vh] sm:h-screen bg-[#0C5E41] text-center px-6 py-16 border-t-2 border-gray-800"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ type: "spring", stiffness: 200, damping: 45 }}
-        >
-          <div className="max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold !text-white mb-4 leading-tight">
-              Ready to Transform Your Waste Management?
-            </h2>
-            <p className="!text-gray-300 font-semibold text-sm sm:text-base md:text-lg mb-10">
-              Schedule a consultation to see how Reclevo can bring visibility
-              and efficiency to your waste management operations.
-            </p>
-
-            <Link href="/contact">
-              <button className="flex items-center justify-center gap-2 w-[250px] mx-auto mt-10 bg-[#ffffff] text-black  text-xl font-bold !p-6 py-3 rounded-full transition-all hover:bg-[#0C5E41] hover:border-2 hover:text-white hover:border-white  cursor-pointer">
-                Contact us <ArrowRight size={20} />
-              </button>
-            </Link>
-          </div>
-        </motion.section>
       </main>
 
-      <AssetCtaSection />
+      {/* CTA Section */}
+      <section className="py-20 lg:py-28 bg-[#0C5E41] relative overflow-hidden">
+        {/* Curved top edge */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-white" style={{ borderRadius: '0 0 50% 50%' }} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight ${ptSerif.className}`}>
+              Ready to Modernize Your Asset Management?
+            </h2>
+            <p className="text-lg text-white/80 mb-10 leading-relaxed">
+              Join municipalities across India who are using Reclevo to digitize
+              their waste operations and improve efficiency.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact">
+                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-[#0C5E41] bg-white rounded-full hover:bg-gray-100 transition-colors">
+                  Schedule a Demo <ArrowRight size={18} />
+                </button>
+              </Link>
+              <Link href="/smart-waste-solutions">
+                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border-2 border-white/40 rounded-full hover:bg-white/10 transition-colors">
+                  Explore Solutions
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

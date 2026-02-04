@@ -4,33 +4,49 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* ========================================
+     RECLEVO DESIGN SYSTEM
+     Clean, Professional, No Gradients
+  ======================================== */
 
-  /* Reclevo Brand Colors */
+  /* Primary Brand Color - Forest Green */
+  --primary: #0C5E41;
+  --primary-hover: #0a4f36;
+  --primary-light: #e8f5f0;
+  --primary-muted: #c7e6d7;
+
+  /* Neutral Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+
+  /* Backgrounds */
+  --bg-white: #ffffff;
+  --bg-light: #f9fafb;
+  --bg-muted: #f3f4f6;
+
+  /* Borders */
+  --border-light: #e5e7eb;
+  --border-default: #d1d5db;
+
+  /* Legacy variables for compatibility */
   --primary-green: #0C5E41;
-  --primary-green-light: #0F7A52;
+  --primary-green-light: #0a4f36;
   --primary-green-dark: #094A33;
-  --primary-green-50: #E8F5F0;
-  --primary-green-100: #C7E6D7;
+  --primary-green-50: #e8f5f0;
+  --primary-green-100: #c7e6d7;
   --primary-green-200: #9FD6BE;
   --primary-green-500: #0C5E41;
   --primary-green-600: #0A4F36;
   --primary-green-700: #08402B;
-
-  /* Brand Grays */
-  --text-primary: #000000;
-  --text-secondary: #636363;
-  --text-light: #888888;
   --white: #ffffff;
-
-  /* Functional colors */
   --success: #0C5E41;
   --error: #dc2626;
   --warning: #f59e0b;
   --info: #0284c7;
-
-  /* Background variations */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
+  --bg-secondary: #f9fafb;
   --bg-accent: #0C5E41;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -240,12 +256,12 @@ html {
 }
 
 .stats-card {
-  background: linear-gradient(135deg, var(--primary-green-50) 0%, var(--primary-green-100) 100%);
+  background-color: var(--primary-light);
   @apply text-center p-6 rounded-xl;
 }
 
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-green-50) 0%, #f0f9ff 50%, var(--primary-green-50) 100%);
+  background-color: var(--bg-light);
   @apply relative overflow-hidden;
 }
 
@@ -257,17 +273,17 @@ html {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Gradient backgrounds */
-.gradient-emerald {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+/* Solid background colors - No gradients */
+.bg-emerald-soft {
+  background-color: #e8f5f0;
 }
 
-.gradient-blue {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+.bg-blue-soft {
+  background-color: #eff6ff;
 }
 
-.gradient-primary {
-  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+.bg-primary-solid {
+  background-color: var(--primary);
 }
 
 /* Animation keyframes */

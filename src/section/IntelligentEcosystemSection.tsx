@@ -105,21 +105,29 @@ const MODULES_DATA = [
 const IntelligentEcosystemSection = () => {
   const [selectedModule, setSelectedModule] = useState(MODULES_DATA[1]); // default selected module
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        <ScrollReveal
-          direction="left"
-          distance={100}
-          containerClassName="w-full"
-          textClassName={`text-4xl md:text-7xl font-bold !text-black mb-28 ${ptSerif.className}`}
-        >
-          Six interconnected modules working together to create the most
-          advanced waste management platform
-        </ScrollReveal>
+    <section className="relative py-16 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-4">
+            Our Platform
+          </span>
+          <ScrollReveal
+            direction="left"
+            distance={100}
+            containerClassName="w-full"
+            textClassName={`text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-6 ${ptSerif.className}`}
+          >
+            Interconnected Modules for Complete Waste Management
+          </ScrollReveal>
+          <p className="text-lg text-[#4a4a4a] max-w-3xl mx-auto">
+            Six powerful modules working together to create the most advanced waste management platform available.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column - Features List */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {MODULES_DATA.map((module, idx) => (
               <ModuleCard
                 key={idx}
@@ -131,25 +139,25 @@ const IntelligentEcosystemSection = () => {
           </div>
 
           {/* Right Column - Feature Highlight */}
-          <div className="feature-card !bg-[#ffffff]  !border-[#0C5E41] !border-4   h-[600px] rounded-2xl p-8 hover:shadow-2xl ">
+          <div className="bg-white border-2 border-[#0C5E41] h-auto min-h-[550px] rounded-2xl p-8 shadow-lg sticky top-32">
             {/* Top Card */}
-            <div className=" rounded-xl p-6 mb-6 text-center transition-transform hover:scale-105">
-              <div className="w-16 h-16 bg-[#9be367] rounded-full flex items-center justify-center mx-auto mb-4 shadow-md transition-transform duration-300 hover:rotate-6">
+            <div className="rounded-xl p-6 mb-6 text-center">
+              <div className="w-16 h-16 bg-[#0C5E41] rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                 <selectedModule.topCard.icon className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-2xl font-bold text-gray-900">
+              <h4 className={`text-2xl font-bold text-[#1a1a1a] ${ptSerif.className}`}>
                 {selectedModule.topCard.heading}
               </h4>
-              <p className="text-gray-600 text-md mt-2">
+              <p className="text-[#4a4a4a] text-base mt-2">
                 {selectedModule.topCard.description}
               </p>
             </div>
 
             {/* Title & Description */}
-            <h3 className="text-3xl font-bold mb-4 !text-black">
+            <h3 className={`text-2xl font-bold mb-4 text-[#1a1a1a] ${ptSerif.className}`}>
               {selectedModule.heading}
             </h3>
-            <p className="!text-black mb-6 text-xl">
+            <p className="text-[#4a4a4a] mb-6 text-base leading-relaxed">
               {selectedModule.description}
             </p>
 
@@ -157,8 +165,8 @@ const IntelligentEcosystemSection = () => {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {selectedModule.bulletPoints.map((point, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <Check className="w-5 h-5 !text-black mt-1 flex-shrink-0" />
-                  <span className="text-sm font-medium text-md !text-black">
+                  <Check className="w-5 h-5 text-[#0C5E41] mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-[#4a4a4a]">
                     {point}
                   </span>
                 </li>
@@ -166,12 +174,14 @@ const IntelligentEcosystemSection = () => {
             </ul>
 
             {/* CTA Button */}
-            <button className="w-full py-3 px-6 rounded-lg bg-gradient-to-r !bg-[#0C5E41] border-2 border-[#292b24] text-white font-semibold shadow-md hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2">
+            <button className="w-full py-3 px-6 rounded-full bg-[#0C5E41] text-white font-semibold hover:bg-[#0a4f36] transition-colors">
               Learn More
             </button>
           </div>
         </div>
       </div>
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#f9fafb]" style={{ borderRadius: '50% 50% 0 0' }} />
     </section>
   );
 };

@@ -18,18 +18,6 @@ const cultureSections = [
       "Work-life balance and flexible schedules",
     ],
   },
-  
-  {
-    src: "/images/careers.jpg",
-    alt: "Team event",
-    caption: "Celebrating wins together and fostering team spirit",
-    bullets: [
-      "Monthly social events and celebrations",
-      "Team lunches and outings",
-      "Cross-functional collaboration and bonding",
-      "Encouragement of personal creativity and hobbies",
-    ],
-  },
 ];
 
 const OurCultureSection = () => {

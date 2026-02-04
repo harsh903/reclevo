@@ -35,29 +35,31 @@ const steps = [
 ];
 const ThreeStepSection = () => {
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        <div className="text-center mb-12">
+    <section className="relative py-16 lg:py-24 bg-[#f9fafb] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-4">
+            How It Works
+          </span>
           <h2
-            className={`text-4xl md:text-6xl font-bold !text-[#000000] ${ptSerif.className}`}
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-6 ${ptSerif.className}`}
           >
-            Transform your operastions in three steps
+            Transform Your Operations in Three Steps
           </h2>
-
-          <p
-            className={`text-2xl md:text-2xl font-bold pt-6 !text-[#000000] ${ptSerif.className}`}
-          >
+          <p className="text-lg text-[#4a4a4a] max-w-2xl mx-auto">
             Join thousands of businesses and collectors who have revolutionized
-            their waste management operations
+            their waste management operations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10 mb-12 mt-12">
+        <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, idx) => (
             <StepCard key={idx} step={step} />
           ))}
         </div>
       </div>
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#0C5E41]" style={{ borderRadius: '50% 50% 0 0' }} />
     </section>
   );
 };

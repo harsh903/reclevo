@@ -20,17 +20,17 @@ const staggerContainer = {
 
 const teamImages = [
   {
-    src: "/images/careers.jpg",
+    src: "/images/aboutUs.jpeg",
     alt: "Team collaboration session",
     caption: "Our diverse team collaborating on innovative solutions",
   },
   {
-    src: "/images/careers.jpg",
+    src: "/images/solution_Overview.jpg",
     alt: "Office workspace",
     caption: "Modern workspace designed for creativity and productivity",
   },
   {
-    src: "/images/careers.jpg",
+    src: "/images/reclevo1.jpg",
     alt: "Team meeting",
     caption: "Weekly team syncs to align on goals and celebrate wins",
   },

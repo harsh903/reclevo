@@ -1,48 +1,62 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Target, Eye, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { ptSerif } from "@/utils/Fonts";
 import Link from "next/link";
-import ScrollReveal from "../../components/ScrollReveal";
-import MissionAnsVision from "@/section/about/MissionAnsVision";
 
 export default function About() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-screen flex flex-col items-start justify-center px-4 sm:px-6 lg:px-12 pt-20">
-        <div className="max-w-6xl">
-          <span className="text-[#0C5E41] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm tracking-widest uppercase block">
-            About Reclevo
-          </span>
-          <ScrollReveal
-            direction="left"
-            distance={50}
-            containerClassName="w-full"
-            textClassName={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl max-w-4xl font-bold text-gray-900 leading-tight ${ptSerif.className}`}
-          >
-            From Goa&apos;s leading waste management innovator to India&apos;s
-            technology-driven sustainability partner
-          </ScrollReveal>
+      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-6">
+                About Reclevo
+              </span>
+              <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1a1a1a] leading-tight mb-6 ${ptSerif.className}`}>
+                Transforming How
+                <span className="text-[#0C5E41]"> India Handles Waste</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-[#4a4a4a] leading-relaxed">
+                Reclevo Infotech Pvt. Ltd. is a technology-driven waste management company
+                building smart digital solutions that connect all stakeholders into one seamless ecosystem.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/solution_Overview.jpg"
+                  alt="Reclevo operations"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#f9fafb]" style={{ borderRadius: '50% 50% 0 0' }} />
       </section>
 
       {/* Story Section */}
-      <section className="py-12 sm:py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24 bg-[#f9fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative w-full aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden shadow-xl"
+              className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
             >
               <Image
-                src="/images/aboutUs.jpeg"
-                alt="Our Story"
+                src="/images/reclevo1.jpg"
+                alt="Reclevo team"
                 fill
                 className="object-cover"
               />
@@ -52,69 +66,160 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg">
-                <span className="font-bold text-[#0C5E41]">Reclevo Infotech Pvt. Ltd</span> is
-                pioneering the digital transformation of waste management in India.
-                With over 5 years of hands-on operational experience in Goa, we&apos;ve
-                built deep expertise in what works on the ground. Now, we&apos;re combining
-                that knowledge with AI, IoT, and robotics to deliver solutions that
-                actually solve problems—reducing costs, improving efficiency, and
-                helping municipalities meet their sustainability goals.
+              <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-4">
+                Who We Are
+              </span>
+              <h2 className={`text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-6 ${ptSerif.className}`}>
+                Technology Meets Waste Management
+              </h2>
+              <p className="text-[#4a4a4a] leading-relaxed mb-6">
+                We build smart digital solutions that connect governments, businesses,
+                waste collectors, and processing facilities into one seamless ecosystem.
+                Our platform creates complete visibility from waste generation to final disposal.
+              </p>
+              <p className="text-[#4a4a4a] leading-relaxed">
+                By combining technology with deep domain expertise, we&apos;re transforming
+                how India handles waste, making it traceable, accountable, and sustainable.
               </p>
             </motion.div>
           </div>
         </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-white" style={{ borderRadius: '50% 50% 0 0' }} />
       </section>
 
       {/* Mission & Vision */}
-      <MissionAnsVision />
+      <section className="relative py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-[#f9fafb] rounded-xl p-8 border border-[#e5e7eb]"
+            >
+              <div className="w-12 h-12 bg-[#0C5E41] rounded-lg flex items-center justify-center text-white mb-6">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className={`text-2xl font-bold text-[#1a1a1a] mb-4 ${ptSerif.className}`}>
+                Our Mission
+              </h3>
+              <p className="text-[#4a4a4a] leading-relaxed">
+                Transform waste into a resource using technology, partnerships,
+                and a vision for a circular economy. We connect all stakeholders
+                to create transparency and accountability in waste management.
+              </p>
+            </motion.div>
 
-      {/* Challenges Section */}
-      <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-12">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal
-            direction="left"
-            distance={50}
-            containerClassName="w-full mb-6 sm:mb-8"
-            textClassName={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0C5E41] leading-tight ${ptSerif.className}`}
-          >
-            Turning Challenges into Opportunities
-          </ScrollReveal>
-          <ScrollReveal
-            direction="right"
-            distance={50}
-            containerClassName="w-full lg:w-4/5 lg:ml-auto"
-            textClassName="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed"
-          >
-            Every challenge in waste management is an opportunity to innovate.
-            We combine{" "}
-            <span className="font-semibold text-gray-900">
-              operational expertise with cutting-edge technology
-            </span>{" "}
-            to deliver solutions that work—starting from our roots in Goa and
-            now scaling across India.
-          </ScrollReveal>
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-[#f9fafb] rounded-xl p-8 border border-[#e5e7eb]"
+            >
+              <div className="w-12 h-12 bg-[#0C5E41] rounded-lg flex items-center justify-center text-white mb-6">
+                <Eye className="w-6 h-6" />
+              </div>
+              <h3 className={`text-2xl font-bold text-[#1a1a1a] mb-4 ${ptSerif.className}`}>
+                Our Vision
+              </h3>
+              <p className="text-[#4a4a4a] leading-relaxed">
+                A cleaner India where every waste journey is tracked, every
+                disposal is responsible, and every city has access to smart
+                waste management technology that actually works.
+              </p>
+            </motion.div>
+          </div>
         </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#f9fafb]" style={{ borderRadius: '50% 50% 0 0' }} />
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="relative py-16 lg:py-24 bg-[#f9fafb]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-[#e8f5f0] text-[#0C5E41] text-sm font-medium rounded-full mb-4">
+              Why Reclevo
+            </span>
+            <h2 className={`text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 ${ptSerif.className}`}>
+              What Sets Us Apart
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Ground-Level Experience",
+                description: "5+ years of hands-on waste management operations across Goa."
+              },
+              {
+                title: "Technology-First",
+                description: "AI, IoT, and analytics solutions designed for real-world impact."
+              },
+              {
+                title: "Partnership Focus",
+                description: "Collaborative approach that prioritizes your success."
+              },
+              {
+                title: "Scalable Solutions",
+                description: "Flexible platforms that grow with your requirements."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 border border-[#e5e7eb]"
+              >
+                <CheckCircle className="w-8 h-8 text-[#0C5E41] mb-4" />
+                <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#4a4a4a] leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        {/* Curved bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#0C5E41]" style={{ borderRadius: '50% 50% 0 0' }} />
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0C5E41]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight ${ptSerif.className}`}>
-            Ready to Transform Your Waste Management?
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-8 sm:mb-10 leading-relaxed">
-            Let&apos;s explore how Reclevo can help your municipality or business
-            achieve operational efficiency and sustainability goals.
-          </p>
-          <Link href="/contact">
-            <button className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-gray-900 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-lg">
-              Contact Us <ArrowRight size={18} />
-            </button>
-          </Link>
+      <section className="relative py-20 lg:py-28 bg-[#0C5E41] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight ${ptSerif.className}`}>
+              Ready to Work Together?
+            </h2>
+            <p className="text-lg text-white/80 mb-10 leading-relaxed">
+              Let&apos;s explore how Reclevo can help your municipality or business
+              achieve operational efficiency and sustainability goals.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact">
+                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-[#0C5E41] bg-white rounded-full hover:bg-gray-100 transition-colors">
+                  Get in Touch <ArrowRight size={18} />
+                </button>
+              </Link>
+              <Link href="/smart-waste-solutions">
+                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border-2 border-white/40 rounded-full hover:bg-white/10 transition-colors">
+                  View Solutions
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
